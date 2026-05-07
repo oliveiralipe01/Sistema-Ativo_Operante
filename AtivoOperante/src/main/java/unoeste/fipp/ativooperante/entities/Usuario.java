@@ -15,12 +15,12 @@ public class Usuario {
     @Column(name = "usu_cpf")
     private Long cpf;
 
-    @NotNull
+    @NotBlank
     @Email
     @Column(name = "usu_email")
     private String email;
 
-    @NotBlank
+    @NotNull
     @Column(name = "usu_senha")
     private Long senha;
 
