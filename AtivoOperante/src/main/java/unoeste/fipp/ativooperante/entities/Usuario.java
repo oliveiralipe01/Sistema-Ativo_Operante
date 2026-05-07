@@ -11,11 +11,11 @@ public class Usuario {
     @Column(name = "usu_id")
     private Long id;
 
-    @NotBlank
+    @NotNull
     @Column(name = "usu_cpf")
     private Long cpf;
 
-    @NotBlank
+    @NotNull
     @Email
     @Column(name = "usu_email")
     private String email;

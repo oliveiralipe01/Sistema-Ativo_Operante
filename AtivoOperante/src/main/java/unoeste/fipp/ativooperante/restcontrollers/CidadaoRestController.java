@@ -15,7 +15,7 @@ import unoeste.fipp.ativooperante.services.TipoService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/cidadao")
+@RequestMapping("/apis/cidadao")
 public class CidadaoRestController {
 
     @Autowired

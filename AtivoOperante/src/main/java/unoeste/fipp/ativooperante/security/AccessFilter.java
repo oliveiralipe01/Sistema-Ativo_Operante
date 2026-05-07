@@ -31,15 +31,13 @@ public class AccessFilter implements Filter {
 
                 String rota = request.getRequestURI();
 
-                // ADMIN
-                if(rota.contains("/adm") && !nivel.equals("1")) {
+                if(rota.startsWith("/apis/adm") && !nivel.equals("1")){
                     response.setStatus(403);
                     response.getWriter().write("Acesso negado");
                     return;
                 }
 
-                // CIDADAO
-                if(rota.contains("/cidadao")
+                if(rota.startsWith("/apis/cidadao")
                         && !(nivel.equals("1") || nivel.equals("2"))) {
 
                     response.setStatus(403);

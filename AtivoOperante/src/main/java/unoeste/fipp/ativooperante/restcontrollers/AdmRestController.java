@@ -13,7 +13,7 @@ import unoeste.fipp.ativooperante.services.TipoService;
 import java.util.List;
 
 @RestController
-@RequestMapping("apis/adm")
+@RequestMapping("/apis/adm")
 public class AdmRestController
 {
     //endpoint:

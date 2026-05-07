@@ -44,8 +44,7 @@ public class AcessoRestController {
 
         if(usuario != null)
         {
-            if(usuario.getEmail().equals("admin@pm.br")
-                    && usuario.getSenha() == 123321)
+            if(usuario.getEmail().equals("admin@pm.br") && usuario.getSenha().equals(123321L))
             {
                 usuario.setNivel(1);
             }
