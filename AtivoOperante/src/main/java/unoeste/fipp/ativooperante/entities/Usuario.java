@@ -1,7 +1,7 @@
 package unoeste.fipp.ativooperante.entities;
 
 import jakarta.persistence.*;
-
+import jakarta.validation.constraints.*;
 @Entity
 @Table(name = "usuario")
 public class Usuario {
@@ -11,23 +11,27 @@ public class Usuario {
     @Column(name = "usu_id")
     private Long id;
 
+    @NotBlank
     @Column(name = "usu_cpf")
-    private String cpf;
+    private Long cpf;
 
+    @NotBlank
+    @Email
     @Column(name = "usu_email")
     private String email;
 
+    @NotBlank
     @Column(name = "usu_senha")
-    private String senha;
+    private Long senha;
 
     @Column(name = "usu_nivel")
     private int nivel;
 
     public Usuario() {
-        this(0L, "", "", "", 0);
+        this(0L, 0L, "", 0L, 0);
     }
 
-    public Usuario(Long id, String cpf, String email, String senha, int nivel) {
+    public Usuario(Long id, Long cpf, String email, Long senha, int nivel) {
         this.id = id;
         this.cpf = cpf;
         this.email = email;
@@ -35,7 +39,7 @@ public class Usuario {
         this.nivel = nivel;
     }
 
-    public Usuario(String cpf, String email, String senha, int nivel) {
+    public Usuario(Long cpf, String email, Long senha, int nivel) {
         this(0L, cpf, email, senha, nivel);
     }
 
@@ -43,7 +47,7 @@ public class Usuario {
         return id;
     }
 
-    public String getCpf() {
+    public Long getCpf() {
         return cpf;
     }
 
@@ -51,7 +55,7 @@ public class Usuario {
         return email;
     }
 
-    public String getSenha() {
+    public Long getSenha() {
         return senha;
     }
 
@@ -63,7 +67,7 @@ public class Usuario {
         this.id = id;
     }
 
-    public void setCpf(String cpf) {
+    public void setCpf(Long cpf) {
         this.cpf = cpf;
     }
 
@@ -71,7 +75,7 @@ public class Usuario {
         this.email = email;
     }
 
-    public void setSenha(String senha) {
+    public void setSenha(Long senha) {
         this.senha = senha;
     }
 

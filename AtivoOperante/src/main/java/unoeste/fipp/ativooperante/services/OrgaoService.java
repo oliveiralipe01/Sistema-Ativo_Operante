@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import unoeste.fipp.ativooperante.entities.Orgao;
 import unoeste.fipp.ativooperante.repositories.OrgaoRepository;
-import unoeste.fipp.ativooperante.repositories.TipoRepository;
+
 
 import java.util.List;
 
@@ -13,6 +13,7 @@ public class OrgaoService
 {
     @Autowired
     OrgaoRepository orgaoRepository;
+
 
     public List<Orgao> findAll()
     {
@@ -47,5 +48,4 @@ public class OrgaoService
         else
             return false;
     }
-
 }

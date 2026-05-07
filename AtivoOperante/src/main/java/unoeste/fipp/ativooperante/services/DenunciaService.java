@@ -1,5 +1,6 @@
 package unoeste.fipp.ativooperante.services;
 
+
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,14 +12,10 @@ import unoeste.fipp.ativooperante.repositories.FeedbackRepository;
 import java.util.List;
 
 @Service
-public class DenunciaService
-{
-    //save
-    //delete
-    //findOne
-    //findAll(filtro)
+public class DenunciaService {
 
     @Autowired
+
     DenunciaRepository denunciaRepository;
     @Autowired
     FeedbackRepository feedbackRepository;
@@ -54,16 +51,25 @@ public class DenunciaService
     }
 
 
-    public Feedback adicionarFeedback(Feedback feedback)
-    {
+    public Feedback adicionarFeedback(Feedback feedback) {
         Denuncia denuncia = feedback.getDenuncia();
         Feedback save;
-        if(feedbackRepository.findByDenunciaId(denuncia.getId()) == null)
-        {
+        if (feedbackRepository.findByDenunciaId(denuncia.getId()) == null) {
             save = feedbackRepository.save(feedback);
             return save;
-        }
-        else
+        } else
             return null;
     }
-}
+
+    public Denuncia cadastrar(Denuncia denuncia) {
+        return denunciaRepository.save(denuncia);
+    }
+
+
+
+    public List<Denuncia> listarPorUsuario(Long idUsuario) {
+        return denunciaRepository.findByUsuarioId(idUsuario);
+    }
+
+    }
+

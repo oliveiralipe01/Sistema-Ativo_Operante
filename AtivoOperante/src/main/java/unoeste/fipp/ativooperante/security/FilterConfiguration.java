@@ -26,13 +26,18 @@ public class FilterConfiguration {
     }
     /*aplica o AccessFilter (trata o token)*/
     @Bean
-    public FilterRegistrationBean <AccessFilter>registrationBean(){
-        FilterRegistrationBean <AccessFilter>register = new FilterRegistrationBean();
+    public FilterRegistrationBean<AccessFilter> registrationBean(){
+
+        FilterRegistrationBean<AccessFilter> register =
+                new FilterRegistrationBean<>();
+
         register.setFilter(new AccessFilter());
-        //coloque todas as rotas que devem ser analisadas pelo filtro de acesso
+
         register.addUrlPatterns("/apis/adm/*");
         register.addUrlPatterns("/apis/cidadao/*");
+
         register.setOrder(1);
+
         return register;
     }
 }

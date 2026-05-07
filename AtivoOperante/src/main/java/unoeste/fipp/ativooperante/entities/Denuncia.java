@@ -1,6 +1,7 @@
 package unoeste.fipp.ativooperante.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 
 import java.time.LocalDate;
 
@@ -12,12 +13,16 @@ public class Denuncia
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "den_id")
     private Long id;
+    @NotBlank
     @Column(name = "den_titulo")
     private String titulo;
 
+    @NotBlank
     @Column(name = "den_texto")
     private String texto;
 
+    @Min(1)
+    @Max(5)
     @Column(name = "den_urgencia")
     private int urgencia;
 
@@ -119,4 +124,5 @@ public class Denuncia
     public void setData(LocalDate data) {
         this.data = data;
     }
+
 }

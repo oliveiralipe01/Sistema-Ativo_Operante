@@ -8,41 +8,36 @@ import unoeste.fipp.ativooperante.repositories.TipoRepository;
 import java.util.List;
 
 @Service
-public class TipoService
-{
+
+public class TipoService {
     @Autowired
     TipoRepository tipoRepository;
 
-    public List<Tipo> findAll()
-    {
+    public List<Tipo> findAll() {
         List<Tipo> tipos = tipoRepository.findAll();
 
         return tipos;
     }
 
-    public Tipo findById(Long id)
-    {
+    public Tipo findById(Long id) {
         Tipo tipo = tipoRepository.findById(id).orElse(null);
 
         return tipo;
     }
 
-    public Tipo save(Tipo tipo)
-    {
+    public Tipo save(Tipo tipo) {
         Tipo tipoSave = tipoRepository.save(tipo);
 
         return tipoSave;
     }
 
-    public boolean delete(Long id)
-    {
-        if(findById(id) != null)
-        {
+    public boolean delete(Long id) {
+        if (findById(id) != null) {
             tipoRepository.deleteById(id);
             return true;
-        }
-        else
+        } else
             return false;
+
     }
 }
 
