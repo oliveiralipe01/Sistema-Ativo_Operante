@@ -1,5 +1,6 @@
 package unoeste.fipp.ativooperante.services;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import unoeste.fipp.ativooperante.entities.Denuncia;
@@ -36,16 +37,22 @@ public class DenunciaService
         return denuncia;
     }
 
+    @Transactional
     public boolean delete(Long id)
     {
         if(findOne(id) != null)
         {
+            Feedback feedback = feedbackRepository.findByDenunciaId(id);
+            if( feedback != null)
+                feedbackRepository.delete(feedback);
+
             denunciaRepository.deleteById(id);
             return true;
         }
         else
             return false;
     }
+
 
     public Feedback adicionarFeedback(Feedback feedback)
     {

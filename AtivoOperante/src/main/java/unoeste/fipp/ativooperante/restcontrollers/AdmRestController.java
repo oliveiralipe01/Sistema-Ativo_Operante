@@ -128,6 +128,19 @@ public class AdmRestController
             return ResponseEntity.ok(denuncia);
     }
 
+    @DeleteMapping("/denuncia/{id}")
+    public ResponseEntity<Object> deleteDenuncia(@PathVariable Long id)
+    {
+        boolean delete = denunciaService.delete(id);
+
+        if(!delete)
+        {
+            return ResponseEntity.badRequest().body(new Erro("Erro ao deletar a denúncia"));
+        }
+        else
+            return ResponseEntity.noContent().build();
+    }
+
     @PostMapping("/feedback")
     public ResponseEntity<Object> adicionarFeedback(@RequestBody Feedback feedback)
     {

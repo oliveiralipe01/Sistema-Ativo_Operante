@@ -10,7 +10,7 @@ public class Denuncia
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
+    @Column(name = "den_id")
     private Long id;
     @Column(name = "den_titulo")
     private String titulo;
