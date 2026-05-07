@@ -1,7 +1,7 @@
 package unoeste.fipp.ativooperante.entities;
 
 import jakarta.persistence.*;
-
+import jakarta.validation.constraints.*;
 @Entity
 @Table(name = "usuario")
 public class Usuario {
@@ -11,12 +11,16 @@ public class Usuario {
     @Column(name = "usu_id")
     private Long id;
 
+    @NotBlank
     @Column(name = "usu_cpf")
     private String cpf;
 
+    @NotBlank
+    @Email
     @Column(name = "usu_email")
     private String email;
 
+    @NotBlank
     @Column(name = "usu_senha")
     private String senha;
 

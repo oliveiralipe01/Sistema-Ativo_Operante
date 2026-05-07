@@ -1,6 +1,7 @@
 package unoeste.fipp.ativooperante.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "orgaos")
@@ -11,6 +12,7 @@ public class Orgao {
     @Column(name = "org_id")
     private Long id;
 
+    @NotBlank
     @Column(name = "org_nome")
     private String nome;
 
