@@ -32,12 +32,17 @@ public class TipoService {
     }
 
     public boolean delete(Long id) {
-        if (findById(id) != null) {
-            tipoRepository.deleteById(id);
-            return true;
-        } else
+        try {
+            if (findById(id) != null) {
+                tipoRepository.deleteById(id);
+                return true;
+            }
+            else{
+                return false;
+            }
+        } catch (Exception e) {
             return false;
-
+        }
     }
 }
 

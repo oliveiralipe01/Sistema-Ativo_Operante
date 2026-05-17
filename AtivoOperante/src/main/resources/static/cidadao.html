@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Área do Cidadão</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <strong>Ativo e Operante!</strong>
+      <span>Área do Cidadão</span>
+    </div>
+    <button id="sair" class="btn-secondary">Sair</button>
+  </header>
+
+  <main class="container grid-2">
+    <section class="panel">
+      <h1>Nova denúncia</h1>
+      <form id="formDenuncia" class="form active-form form-panel">
+        <label>Título</label>
+        <input type="text" id="titulo" required />
+
+        <label>Descrição</label>
+        <textarea id="texto" rows="5" required></textarea>
+
+        <label>Data</label>
+        <input type="date" id="data" required />
+
+        <label>Urgência</label>
+        <select id="urgencia" required>
+          <option value="1">1 - Baixa</option>
+          <option value="2">2</option>
+          <option value="3">3 - Média</option>
+          <option value="4">4</option>
+          <option value="5">5 - Muito urgente</option>
+        </select>
+
+        <label>Órgão competente</label>
+        <select id="orgao" required></select>
+
+        <label>Tipo de problema</label>
+        <select id="tipo" required></select>
+
+        <p class="small-note">Foto opcional: o backend atual ainda não possui endpoint/campo para upload da foto.</p>
+        <button type="submit">Enviar denúncia</button>
+      </form>
+      <p id="mensagem" class="mensagem"></p>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">
+        <h1>Minhas denúncias</h1>
+        <button id="recarregar" class="btn-secondary">Atualizar</button>
+      </div>
+      <div id="listaDenuncias" class="cards-list"></div>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/cidadao.js"></script>
+</body>
+</html>

@@ -40,12 +40,17 @@ public class OrgaoService
 
     public boolean delete(Long id)
     {
-        if(findById(id) != null)
-        {
-            orgaoRepository.deleteById(id);
-            return true;
-        }
-        else
+        try {
+            if(findById(id) != null)
+            {
+                orgaoRepository.deleteById(id);
+                return true;
+            }
+            else {
+                return false;
+            }
+        } catch (Exception e) {
             return false;
+        }
     }
 }

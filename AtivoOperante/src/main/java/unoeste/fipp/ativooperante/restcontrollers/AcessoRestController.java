@@ -59,6 +59,7 @@ public class AcessoRestController {
             resposta.put("token", token);
             resposta.put("nivel", usuario.getNivel());
             resposta.put("email", usuario.getEmail());
+            resposta.put("id", usuario.getId());
 
             return resposta;
         }

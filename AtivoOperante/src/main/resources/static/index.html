@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ativo e Operante</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="auth-layout">
+    <section class="hero-card">
+      <span class="badge">Ativo e Operante!</span>
+      <h1>Avise problemas da sua cidade de forma simples.</h1>
+      <p>Registre denúncias, acompanhe respostas e ajude os órgãos responsáveis a resolverem situações da comunidade.</p>
+    </section>
+
+    <section class="auth-card">
+      <div class="tabs">
+        <button class="tab active" data-tab="login">Login</button>
+        <button class="tab" data-tab="cadastro">Cadastro</button>
+      </div>
+
+      <form id="formLogin" class="form active-form">
+        <h2>Entrar</h2>
+        <label>E-mail</label>
+        <input type="email" id="loginEmail" value="admin@pm.br" required />
+        <label>Senha numérica</label>
+        <input type="number" id="loginSenha" value="123321" required />
+        <button type="submit">Acessar</button>
+      </form>
+
+      <form id="formCadastro" class="form">
+        <h2>Criar conta cidadão</h2>
+        <label>CPF somente números</label>
+        <input type="number" id="cadCpf" required />
+        <label>E-mail</label>
+        <input type="email" id="cadEmail" required />
+        <label>Senha numérica</label>
+        <input type="number" id="cadSenha" required />
+        <button type="submit">Cadastrar</button>
+      </form>
+
+      <p id="mensagem" class="mensagem"></p>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

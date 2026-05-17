@@ -15,7 +15,6 @@ import java.util.List;
 public class DenunciaService {
 
     @Autowired
-
     DenunciaRepository denunciaRepository;
     @Autowired
     FeedbackRepository feedbackRepository;

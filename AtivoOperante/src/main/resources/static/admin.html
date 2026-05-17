@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administração</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <strong>Ativo e Operante!</strong>
+      <span>Área do Administrador</span>
+    </div>
+    <button id="sair" class="btn-secondary">Sair</button>
+  </header>
+
+  <main class="container admin-grid">
+    <section class="panel">
+      <h1>Órgãos competentes</h1>
+      <form id="formOrgao" class="inline-form">
+        <input type="hidden" id="orgaoId" />
+        <input type="text" id="orgaoNome" placeholder="Ex: Secretaria de Obras" required />
+        <button type="submit">Salvar</button>
+      </form>
+      <div id="listaOrgaos" class="table-list"></div>
+    </section>
+
+    <section class="panel">
+      <h1>Tipos de problema</h1>
+      <form id="formTipo" class="inline-form">
+        <input type="hidden" id="tipoId" />
+        <input type="text" id="tipoNome" placeholder="Ex: Buraco na rua" required />
+        <button type="submit">Salvar</button>
+      </form>
+      <div id="listaTipos" class="table-list"></div>
+    </section>
+
+    <section class="panel full-width">
+      <div class="section-title">
+        <h1>Denúncias recebidas</h1>
+        <button id="recarregar" class="btn-secondary">Atualizar</button>
+      </div>
+      <div id="listaDenuncias" class="cards-list"></div>
+    </section>
+  </main>
+
+  <dialog id="modalFeedback" class="modal">
+    <form method="dialog" id="formFeedback" class="form active-form form-panel">
+      <h2>Registrar feedback</h2>
+      <input type="hidden" id="feedbackDenunciaId" />
+      <textarea id="feedbackTexto" rows="5" placeholder="Digite o feedback para o cidadão" required></textarea>
+      <div class="actions-right">
+        <button type="button" id="fecharModal" class="btn-secondary">Cancelar</button>
+        <button type="submit">Salvar feedback</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="js/api.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

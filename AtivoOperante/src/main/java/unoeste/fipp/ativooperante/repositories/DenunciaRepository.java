@@ -12,3 +12,4 @@ public interface DenunciaRepository extends JpaRepository<Denuncia,Long> {
     List<Denuncia> findByUsuarioId(Long usuarioId);
 }
 
+
